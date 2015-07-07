@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+
+    <!-- 增强跨浏览器表现的一致性  -->
+    <!-- <link href="__ROOT__/Framework/normalize.css" rel="stylesheet"> -->
+    <!-- Bootstrap CSS  -->
+    <link href="__ROOT__/Framework/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--  -->
+    <link href="__ROOT__/Framework/bootstrap-3.3.2/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <link href="__ROOT__/<?php echo THEME_PATH ?>Public/css/login.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container-fluid">
+        <div class="panel-bg center-block">
+          <div id="loginPanel" class="col-xs-12">
+            <form action="__CONTROLLER__/doLogin" method="post" class="" id="loginForm" name="loginForm">
+              <div class="panel-heading"><h2 class="form-signin-heading">Please sign in</h2></div>
+
+              <div class="panel-body">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon glyphicon glyphicon-user"></div>
+                    <input type="text" id="username" class="form-control input-lg txt-input" name="username" data-trigger="focus" value="" data-toggle="tooltip" placeholder="username" data-placement="right" title="Please input your username!" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input type="password" id="password" class="form-control input-lg txt-input" name="password" value="" placeholder="password" />
+                </div>
+
+                <div class="form-group form-inline">
+                  <input type="text" id="captcha" class="form-control input-lg txt-input" style="width:150px" name="captcha" value="" placeholder="captcha" />
+                  <img src="__CONTROLLER__/verify" class="img-rounded" onclick="this.src=this.src + '?' + Math.random()" alt="refresh" />
+                </div>
+
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input id="remember-me" type="checkbox" value="" />Remember me
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input type="submit" class="btn btn-primary input-lg btn-block" value="Sign in" />
+                </div>
+
+                <div class="form-group">
+                  <a href="javascript:void(0);">Forget password?</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="__ROOT__/Framework/jquery-1.11.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="__ROOT__/Framework/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

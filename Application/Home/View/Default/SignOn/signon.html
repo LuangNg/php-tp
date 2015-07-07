@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+
+    <!-- Bootstrap核心 CSS 文件 -->
+    <link href="__PUBLIC__/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+		<header>
+		</header>
+		<section>
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4 main">
+					<div id="loginView">
+						<div class="regist-way">
+							<h1>Sign On</h1>
+						</div>
+						<form action="__CONTROLLER__/doReg" method="post" name="regist-by-email">
+							<div class="form-group has-success has-feedback">
+								<input type="text" class="form-control input-lg bs-docs-popover txt-input" data-trigger="focus" data-container="body" name="account" id="account" placeholder="Account" data-toggle="popover" data-placement="right" title="Msg" data-content="Please input username!" />
+								<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control input-lg bs-docs-popover txt-input" data-trigger="focus" data-container="body" name="password" id="password" placeholder="Password" ng-minlength="8" ng-maxlength="20" data-toggle="popover" data-placement="right" title="Tip" data-content="长度为8到16个字符，至少包含两种类型" />
+							</div>
+							<div class="form-group">
+								<input type="password" name="confpassword" class="form-control input-lg bs-docs-popover txt-input" data-trigger="focus" data-container="body" id="confpassword" placeholder="Comfirm Password" data-toggle="popover" data-placement="right" title="Msg" data-content="长度为8到16个字符，至少包含两种类型" />
+							</div>
+							<div class="form-group has-error has-feedback">
+								<input type="text" class="form-control input-lg bs-docs-popover txt-input" data-trigger="focus" data-container="body" name="email" id="email" placeholder="Emaill Addr" data-toggle="popover" data-placement="right" title="提示信息" data-content="请输入常用邮箱地址" />
+								<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+							</div>
+							<div class="checkbox" style="padding:10px 0 15px;">
+								<label>
+									<input type="checkbox" checked name="agreement" value="1" id="agree">I accept the promtion<a href="###">《Ribbon服务协议条款》</a>
+								</label>
+							</div>
+							<div class="regist-way">
+								<!-- <input type="button" name="sub" id="phone" value="立即提交信息"> -->
+								<input type="submit" id="submit" class="btn btn-primary btn-lg btn-block" value="Sign On" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+
+		</footer>
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script> -->
+    <script type="text/javascript" src="__PUBLIC__/Lib/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Lib/angular.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="__PUBLIC__/Lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+	    $(function () {
+	    	//$('[data-toggle="popover"]').tooltip();
+	    	$('[data-toggle="popover"]').popover();
+	    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0014)about:internet -->
+          <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+        <title>index</title>
+    </head>
+    <body>
+      Your name: <input type="text" ng-model="yourname" placeholder="World">
+      <hr>
+      Hello {{yourname || 'World'}}!
+      <hr>
+      {{ ['Ari','Lerner','Likes','To','Eat','Pizza'] | filter:'e' }}
+      <hr>
+      {{ {'name': 'Ari', 'City': 'SanFrancisco'} | json }}
+      <hr>
+      {{ 'San Francisco is very cloudy' | limitTo:3 }}
+      <hr>
+      {{ "San Francisco is very cloudy" | uppercase }}
+      <hr>
+      123465789:{{ 123456789 | number }},1.23456789: {{ 1.23456789 | number:2 }}
+      <hr>
+      {{ [{
+        'name': 'Ari',
+        'status': 'awake'
+      },{
+        'name': 'Q',
+        'status': 'sleeping'
+      },{
+        'name': 'Nate',
+        'status': 'awake'
+      }] | orderBy:'name' }}
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script type="text/javascript" src="__PUBLIC__/Lib/angular.min.js"></script>
+    </body>
+</html>
