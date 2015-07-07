@@ -5,9 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- saved from url=(0014)about:internet -->
-          <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-            <![endif]-->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="__PUBLIC__/Lib/angular.min.js"></script>
         <title>index</title>
     </head>
     <body>
@@ -35,9 +36,26 @@
         'name': 'Nate',
         'status': 'awake'
       }] | orderBy:'name' }}
+      <hr>
+      <label>someProperty = {{anotherProperty}}</label>
+      <input type="checkbox"
+        ng-checked="anotherProperty"
+        ng-init="anotherProperty = false"
+        ng-model="anotherProperty">
+      <hr>
+      <label>Select Two Fish:</label>
+      <input type="checkbox" ng-model="isTwoFish"><br/>
+      <select>
+        <option>One Fish</option>
+        <option ng-selected="isTwoFish">Two Fish</option>
+      </select>
+      <hr>
+      <a ng-href="{{ myHref }}">I'm feeling lucky, when I load</a>
+
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+      <script src="__PUBLIC__/Lib/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script type="text/javascript" src="__PUBLIC__/Lib/angular.min.js"></script>
+      
+      <script type="text/javascript" src="__VIEW__/Public/js/app.js"></script>
     </body>
 </html>
