@@ -3,6 +3,7 @@
 namespace Home\Controller;
 
 use Think\Controller;
+
 /**
  * Sign on controller
  * @author Luang.Ng<luangng@163.com>
@@ -10,11 +11,11 @@ use Think\Controller;
  * @license 
  */
 class SignOnController extends Controller {
-    
+
     public function index() {
         $this->display('signon');
     }
-    
+
     /**
      * verify user's input info
      * @param type $username
@@ -35,7 +36,7 @@ class SignOnController extends Controller {
      */
     public function doReg() {
         //获取页面输入信息
-        $username = trim(I('post.account'));
+        $acct_name = trim(I('post.account'));
         $password = trim(I('post.password'));
         $confpassword = trim(I('post.confpassword'));
         $email = trim(I('post.email'));
@@ -43,12 +44,12 @@ class SignOnController extends Controller {
 
         //是否同意服务协议
         if (!$agreement) {
-            $this->error('请先确认注册协议!');
+            $this->error('You must agree with the protocol!');
             exit;
         }
 
         //验证输入的值是否为空
-        if (empty($username) || empty($password) || empty($confpassword) || empty($email)) {
+        if (empty($acct_name) || empty($password) || empty($confpassword) || empty($email)) {
             $this->error('必填信息不得为空!');
             exit;
         }
@@ -62,31 +63,23 @@ class SignOnController extends Controller {
 
         //验证邮箱地址是否正确
         //验证用户名是否已经被注册
-        $entityUser = M('users');
-        $getUsername = $entityUser->field('account,status')
-                ->where("account = '{$account}'")
+        $account = M('account');
+        $getAccount = $account->field('acct_name')
+                ->where("acct_name = '{$acct_name}'")
                 ->find();
-        if (!empty($getUsername)) {
+        if (!empty($getAccount)) {
             $this->error('用户名已被注册,换一个试试...');
-            exit;
-        }
-
-        //验证邮箱地址是否已经被注册
-        $getUserEmail = $entityUser->field('uid, email')
-                ->where("email = '{$email}'")
-                ->find();
-        if (!empty($getUserEmail) && $getUserEmail['email_state'] != 0) {
-            $this->error('邮箱地址已经被注册!');
             exit;
         } else {
             $curTime = time();
-            $userData['username'] = $username;
-            $userData['password'] = hash('sha1', $password);
-            $userData['email'] = $email;
-            $userData['create_time'] = $curTime;
+            $acctData['acct_no'] = hash(sha1, $curTime);
+            $acctData['acct_name'] = $acct_name;
+            $acctData['password'] = hash('sha256', $password);
+            $acctData['email'] = $email;
+            $acctData['create_time'] = $curTime;
 
-            if ($entityUser->create($userData)) {
-                if ($entityUser->add()) {
+            if ($account->create($acctData)) {
+                if ($account->add()) {
                     $jumpURL = U('LogIn/login');
                     $this->success('恭喜,注册成功!', $jumpURL);
                 } else {
@@ -96,4 +89,5 @@ class SignOnController extends Controller {
             }
         }
     }
+
 }

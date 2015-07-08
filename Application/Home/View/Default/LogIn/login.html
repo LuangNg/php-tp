@@ -8,12 +8,9 @@
 
     <!-- 增强跨浏览器表现的一致性  -->
     <!-- <link href="__ROOT__/Framework/normalize.css" rel="stylesheet"> -->
-    <!-- Bootstrap CSS  -->
-    <link href="__ROOT__/Framework/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <!--  -->
-    <link href="__ROOT__/Framework/bootstrap-3.3.2/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Bootstrap核心 CSS 文件 -->
+    <link href="__PUBLIC__/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="__ROOT__/<?php echo THEME_PATH ?>Public/css/login.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -25,7 +22,7 @@
     <div class="wrapper">
       <div class="container-fluid">
         <div class="panel-bg center-block">
-          <div id="loginPanel" class="col-xs-12">
+          <div id="loginPanel" class="col-xs-12 col-lg-4">
             <form action="__CONTROLLER__/doLogin" method="post" class="" id="loginForm" name="loginForm">
               <div class="panel-heading"><h2 class="form-signin-heading">Please sign in</h2></div>
 
@@ -68,8 +65,8 @@
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type="text/javascript" src="__ROOT__/Framework/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Lib/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="__ROOT__/Framework/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Lib/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
