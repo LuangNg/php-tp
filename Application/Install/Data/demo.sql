@@ -113,33 +113,56 @@ CREATE TABLE IF NOT EXISTS `road_cn` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `users`
+-- 表的结构 `account`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-`id` int(10) unsigned NOT NULL COMMENT '?û?????',
-  `username` char(30) NOT NULL DEFAULT '' COMMENT '?û???',
-  `password` char(50) NOT NULL DEFAULT '' COMMENT '?û?????',
-  `email` varchar(50) NOT NULL DEFAULT '',
-  `mobile` char(15) NOT NULL DEFAULT '' COMMENT '?û??ֻ?????',
-  `create_time` int(13) NOT NULL DEFAULT '0' COMMENT '?˺Ŵ???ʱ??',
-  `mobile_state` tinyint(1) NOT NULL DEFAULT '0' COMMENT '?ֻ??Ƿ?ͨ????֤',
-  `email_state` tinyint(1) NOT NULL DEFAULT '0',
-  `active_code` char(40) NOT NULL DEFAULT '' COMMENT '??????',
-  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '?û?״̬',
-  `is_lock` tinyint(1) NOT NULL DEFAULT '0' COMMENT '?Ƿ?????'
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `account` (
+  `acct_no` varchar(66) NOT NULL,
+  `acct_name` varchar(30) NOT NULL,
+  `password` varchar(66) NOT NULL,
+  `cellphone` varchar(20) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `create_time` int(15) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '1' COMMENT '0:inactive,1:active,2:lock,4:deleted',
+  `role_type` varchar(10) NOT NULL DEFAULT '' COMMENT '',
+  `id_card_num` varchar(30) 
+  `memo` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`acct_no`),
+  UNIQUE KEY `acct_name` (`acct_name`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+DROP TABLE `userinfo`;
+CREATE TABLE IF NOT EXISTS `userinfo` (
+  `id_card_num` varchar(30) NUll COMMENT 'id card num',
+  `realname` varchar(50) NOT NULL COMMENT 'user\'s realname',
+  `gender` int(1) NOT NULL DEFAULT '0' COMMENT '1:male, 0; female',
+  `age` int(2) NOT NULL DEFAULT '18' COMMENT 'age',
+  `birth` int(15) NULL COMMENT 'birthday',
+  `addr` varchar() NULL COMMENT 'address',
+  `education` varchar(10) NUll COMMENT 'education',
+  `graduate_school` varchar(10) NULL COMMENT 'advanced graduate degree' 
+  `nationality` varchar(8) NULL COMMENT 'nationality(get it by reg ip)',
+  `prov_code` varchar(8) NULL COMMENT 'province belong to(get prov by reg ip)',
+  `city_code` varchar(8) COMMENT 'city code(get city code by reg ip)',
+  `post_code` varchar(10) COMMENT 'post code num',
+  PRIMARY KEY (`id_card_num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE `role`;
+CREATE TABLE IF NOT EXISTS `role` (
+  `rid` varchar() NOT NULL,
+  `realname` varchar(50) NOT NULL COMMENT 'user\'s realname',
+  `authority`,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 转存表中的数据 `users`
+-- 转存表中的数据 `account`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `mobile`, `create_time`, `mobile_state`, `email_state`, `active_code`, `status`, `is_lock`) VALUES
-(1, 'luang', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'luangng@163.com', '', 1427165602, 0, 0, '', 1, 0),
-(2, 'hank', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'hank@163.com', '', 1427165735, 0, 0, '', 0, 0),
-(4, 'leon', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'asdfcds', '', 1427167588, 0, 0, '', 0, 0),
-(5, 'wadwvdsva', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'dsvdsvasdv', '', 1427167808, 0, 0, '', 0, 0);
+INSERT INTO `account` (`acct_no`, `acct_name`, `password`, `cellphone`, `email`, `create_time`, `status`, `role_type`, `memo`) VALUES
+('a23306dab4c710a331d8758f6394ea1fad34b19d', 'luangng', '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', NULL, 'luangng916@gmail.com', 1436340766, 1, NULL, NULL);
 
 --
 -- Indexes for dumped tables
