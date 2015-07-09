@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8"/>
-		<title>install application</title>
-	</head>
-	<body>
-		<h1>Installing...Please wait for a while</h1>
-	</body>
+    <head>
+        <meta charset="utf-8"/>
+        <title>install application</title>
+        <link href="__PUBLIC__/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Website protocol</h1>
+        <p>you must approve this protocol</p>
+        <form action="{:U('Install/step1')}" method="post">
+            <input type="checkbox" name="agreement" value="0" />I have read it.
+            <input type="submit" value="I Agree" class="btn-primary btn-lg" />
+        </form>
+
+        <!-- Script Area Start -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script type="text/javascript" src="__PUBLIC__/Lib/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="__PUBLIC__/Lib/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Script Area End -->
+    </body>
 </html>

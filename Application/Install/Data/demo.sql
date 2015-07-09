@@ -132,31 +132,6 @@ CREATE TABLE IF NOT EXISTS `account` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-
-DROP TABLE `userinfo`;
-CREATE TABLE IF NOT EXISTS `userinfo` (
-  `id_card_num` varchar(30) NUll COMMENT 'id card num',
-  `realname` varchar(50) NOT NULL COMMENT 'user\'s realname',
-  `gender` int(1) NOT NULL DEFAULT '0' COMMENT '1:male, 0; female',
-  `age` int(2) NOT NULL DEFAULT '18' COMMENT 'age',
-  `birth` int(15) NULL COMMENT 'birthday',
-  `addr` varchar() NULL COMMENT 'address',
-  `education` varchar(10) NUll COMMENT 'education',
-  `graduate_school` varchar(10) NULL COMMENT 'advanced graduate degree' 
-  `nationality` varchar(8) NULL COMMENT 'nationality(get it by reg ip)',
-  `prov_code` varchar(8) NULL COMMENT 'province belong to(get prov by reg ip)',
-  `city_code` varchar(8) COMMENT 'city code(get city code by reg ip)',
-  `post_code` varchar(10) COMMENT 'post code num',
-  PRIMARY KEY (`id_card_num`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-DROP TABLE `role`;
-CREATE TABLE IF NOT EXISTS `role` (
-  `rid` varchar() NOT NULL,
-  `realname` varchar(50) NOT NULL COMMENT 'user\'s realname',
-  `authority`,
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- 转存表中的数据 `account`
 --
@@ -201,18 +176,29 @@ ALTER TABLE `road_cn`
 --
 -- Indexes for table `users`
 --
-ALTER TABLE `users`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `email` (`email`), ADD UNIQUE KEY `username` (`username`), ADD KEY `mobile` (`mobile`);
-
 --
--- AUTO_INCREMENT for dumped tables
+-- 表的结构 `userinfo`
 --
 
+CREATE TABLE IF NOT EXISTS `userinfo` (
+  `id_card_num` varchar(30) NOT NULL DEFAULT '' COMMENT 'id card num',
+  `realname` varchar(50) NOT NULL COMMENT 'user''s realname',
+  `gender` int(1) NOT NULL DEFAULT '0' COMMENT '1:male, 0; female',
+  `age` int(2) NOT NULL DEFAULT '18' COMMENT 'age',
+  `birth` int(15) DEFAULT NULL COMMENT 'birthday',
+  `addr` varchar(30) DEFAULT NULL COMMENT 'address',
+  `education` varchar(10) DEFAULT NULL COMMENT 'education',
+  `graduate_school` varchar(10) DEFAULT NULL COMMENT 'advanced graduate degree',
+  `nationality` varchar(8) DEFAULT NULL COMMENT 'nationality(get it by reg ip)',
+  `prov_code` varchar(8) DEFAULT NULL COMMENT 'province belong to(get prov by reg ip)',
+  `city_code` varchar(8) DEFAULT NULL COMMENT 'city code(get city code by reg ip)',
+  `post_code` varchar(10) DEFAULT NULL COMMENT 'post code num',
+  PRIMARY KEY (`id_card_num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
--- AUTO_INCREMENT for table `users`
+-- 转存表中的数据 `userinfo`
 --
-ALTER TABLE `users`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '?û?????',AUTO_INCREMENT=6;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `userinfo` (`id_card_num`, `realname`, `gender`, `age`, `birth`, `addr`, `education`, `graduate_school`, `nationality`, `prov_code`, `city_code`, `post_code`) VALUES
+('320562198506126853', '张三', 1, 28, 1356265235, '江苏省南京市玄武区徐庄软件园699-8', '本科', '南京大学', '中国', '320000', '321100', '210000');
