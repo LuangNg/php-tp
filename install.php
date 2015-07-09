@@ -22,7 +22,7 @@ define('BIND_MODULE', 'Install');
 // 绑定Index控制器到当前入口文件
 //define('BIND_CONTROLLER','Index');
 // 定义应用目录
-define('APP_PATH', 'Application/');
+define('APP_PATH', './Application/');
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
