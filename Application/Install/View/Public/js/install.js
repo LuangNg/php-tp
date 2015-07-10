@@ -3,16 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-alert('hehe');
 
-$('step1-btn-next').bind('click', function () {
+$("#chk-agree").bind("click", function () {
+    if ($(this).is(':checked')) {
+        $("#btn-agree").bind("click", function () {
+            window.location.href = "install.php/Install/step1";
+//            $.ajax({
+//                url: "install.php/Install/step1",
+//                type: "POST",
+//                success: function (result) {
+//                    alert(result.content);
+//                },
+//                statusCode:{404: function () {
+//                                alert('file not found!');
+//                            },
+//                            500: function () {
+//                                alert('Server Error!');
+//                            }
+//                }
+//            });
+        }).attr("disabled", false).addClass("btn-primary");
+    } else {
+        $("#btn-agree").unbind("click").attr("disabled", true).removeClass("btn-primary");
+    }
+});
+
+$("#step1-btn-next").bind("click", function () {
+//    window.location.href = "install.php/Install/step2";
     $.ajax({
-        url: 'Install/step2',
-        success: function () {
+        url: "install.php/Install/step2",
+        type: "POST",
+        success: function (result) {
+            alert(result.content);
         },
-        statusCode: {404: function () {
-            alert('page not found');
-        }}
+        statusCode:{404: function () {
+                        alert('file not found!');
+                    },
+                    500: function () {
+                        alert('Server Error!');
+                    }
+        }
     });
 });
 

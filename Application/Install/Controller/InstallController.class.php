@@ -7,6 +7,9 @@ use Think\Controller;
 class InstallController extends Controller {
 
     public function step1() {
+//        $data['status']  = 1;
+//        $data['content'] = 'success';
+//        $this->ajaxReturn($data);
         $this->display();
     }
 
