@@ -10,18 +10,57 @@
         <![endif]-->
         <link href="__PUBLIC__/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <script type="text/javascript" src="__PUBLIC__/Lib/angular.min.js"></script>
-        <title>Step2</title>
+        <title>Step2:Information Collection</title>
     </head>
     <body>
         <h1>Step2-Information Collection</h1>
-        <input type="button" id="step2-btn-next" value="next" />
-        
+        <div class="container-fluid">
+            <form action="__CONTROLLER__/collectInfo" class="form-horizontal" method="post">
+                <div class="form-group">
+                    <label for="db-host" class="col-sm-2 control-label">DB Host IP:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="db-host" class="form-control" name="dbHostIP" value="" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="db-username" class="col-sm-2 control-label">DB Username:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="db-username" class="form-control" name="dbUsername" value="" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="db-password" class="col-sm-2 control-label">DB Password:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="db-password" class="form-control" name="dbPassword" value="" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="db-name" class="col-sm-2 control-label">DB Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="db-name" class="form-control" name="dbName" value="demo" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-1">
+                        <input type="button" id="step2-btn-previous" class="btn btn-default" value="previous" />
+                    </div>
+                    <div class="col-sm-offset-8 col-sm-1">
+                        <input type="submit" id="step2-btn-submit" class="btn btn-default" value="Submit" />
+                    </div>
+                    <div class="col-sm-1">
+                        <input type="reset" id="step2-btn-reset" class="btn btn-default" value="Reset" />
+                    </div>
+                </div>           
+            </form>
+        </div>
+
         <!-- Script Area Start -->
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script type="text/javascript" src="__PUBLIC__/Lib/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script type="text/javascript" src="__PUBLIC__/Lib/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="{$Think.const.THEME_PATH}Public/js/install.js"></script>
+        <script type="text/javascript" src="../Public/js/install.js"></script>
         <!-- Script Area End -->
     </body>
 </html>

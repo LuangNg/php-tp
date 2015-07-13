@@ -29,21 +29,29 @@ $("#chk-agree").bind("click", function () {
 });
 
 $("#step1-btn-next").bind("click", function () {
-//    window.location.href = "install.php/Install/step2";
-    $.ajax({
-        url: "install.php/Install/step2",
-        type: "POST",
-        success: function (result) {
-            alert(result.content);
-        },
-        statusCode:{404: function () {
-                        alert('file not found!');
-                    },
-                    500: function () {
-                        alert('Server Error!');
-                    }
-        }
-    });
+    window.location.href = "step2";
+//    $.ajax({
+//        url: "install.php/Install/step2",
+//        type: "POST",
+//        success: function (result) {
+//            alert(result.content);
+//        },
+//        statusCode:{404: function () {
+//                        alert('file not found!');
+//                    },
+//                    500: function () {
+//                        alert('Server Error!');
+//                    }
+//        }
+//    });
+});
+
+$("#step2-btn-next").bind("click", function () {
+    window.location.href = "step3";
+});
+
+$("#step3-btn-next").bind("click", function () {
+    window.location.href = "step4";
 });
 
 
