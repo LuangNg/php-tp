@@ -1,0 +1,20 @@
+$bg-color : #abcdef;
+$bg-width   :   100%;
+
+html, body, div, header, nav, section, article, footer, aside,
+hgroup, h1, h2, h3, h4, h5, h6, 
+ul, ol, li, dl, dt, dd,
+p, a, span, em, small, 
+table, thead, tbody, tr, th, td, tfoot,
+form, img, input[type="text"] {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.container {
+    width: $bg-width;
+}
+
+
+

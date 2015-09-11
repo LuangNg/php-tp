@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015-6-12, 9:39:01
+    Author     : Luang.Ng
+*/
+
+/*======================
+     FONT DEFINITION
+======================*/
+@font-face {
+    font-family: 'AlexBrush';
+    src: url(../fonts/AlexBrush-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ostrichf';
+    src: url(../fonts/ostrich-regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, p {
+    font-family: "Arial", "PingHei", "Lucida Grande", "Lucida Sans Unicode", "Helvetica Neue", "Helvetica", "Arial", "Verdana","sans-serif";
+    color: #000;
+    font-size: 16px;
+    font-size: 100%;
+    font-size: 1em;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+mark {
+    color:#ff0033;
+    font-weight: 600;
+}
+
+/*======================
+        HEADINGS
+======================*/
+h1, h2, h3 {
+    font-family: "Tahoma", "Times New Roman", "Arial";
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/*根据中文和英文来设置最佳字体*/
+
+
+/*======================
+        LINKS
+======================*/
+a {
+    text-decoration: none;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    
+}
+a:visited {
+    color:#999;
+}
+a:active {
+    color:#999;
+}
+
+/*======================        
+        PARAGRAPHS
+========================*/
+p { 
+
+}
+
+/*======================
+        ORDERED LIST
+========================*/
+ol {
+    list-style:decimal;
+}
+ol li {
+
+}
+
+

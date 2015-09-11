@@ -1,0 +1,136 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2015-6-12, 9:39:01
+    Author     : Luang.Ng
+*/
+
+/*
+    Reset CSS Style 
+*/
+body, div, header, nav, section, article, footer, aside, hgroup,
+h1, h2, h3, a, ul, li, dl, dt, dd, 
+table, thead, tbody, tr, th, td, tfoot,
+form, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body, p {
+    text-align: center;
+}
+
+div, header, nav, section, article, footer, aside, hgroup, figure {
+    display: block;
+    overflow: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    display: block;
+}
+
+#wrapper_bg {
+    width:97.9166667%;
+    margin: 0 auto;
+    min-height: 768px;
+}
+
+#wrapper {
+    width: 96%;
+    margin: 0 auto;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    background: repeating-radial-gradient(2px 2px, ellipse,
+        hsla(0,0%,100%,1) 2px, hsla(0,0%,95%,1) 10px,
+        hsla(0,0%,93%,1) 15px, hsla(0,0%,100%,1) 20px);
+}
+
+nav {
+    display: table;
+}
+
+nav ul {
+    display: table-row;
+}
+
+nav ul li {
+    display: table-cell;
+}
+
+p {
+    column-count: 2;
+    column-gap: 2em;		//栏位间隙
+    column-rule: thin dotted #999; //
+}
+
+/*媒体查询*/
+@media screen and (min-width: 1001px) {
+    #wrapper_bg {
+        background-color: #abcdef;
+    }
+    #wrapper {
+        background-color: #fff;
+        fon-size: 1.4em;
+    }
+    
+    #logo {
+        width: 21.27659574%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px){
+    #wrapper_bg {
+        background-color: #ff0033;
+    }
+    #wrapper {
+        background-color: #0033ff;
+    }
+    
+    #logo {
+        width: 21.27659574%;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 599px){
+    #wrapper_bg {
+        background-color: yellow;
+    }
+    #wrapper {
+        background-color: #ccc;
+    }
+ 
+    #logo {
+        width: 95%;
+    }
+}
+
+#logo {
+   -khtml-border-radius: 10px;
+   -rim-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   border-radius: 10px;
+   background-color: pink;
+   padding: 10px;
+}
+
+.btn {
+    background: rgb(208,228,247); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(208,228,247,1) 0%, rgba(115,177,231,1) 47%, rgba(10,119,213,1) 96%, rgba(135,188,234,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(208,228,247,1)), color-stop(47%,rgba(115,177,231,1)), color-stop(96%,rgba(10,119,213,1)), color-stop(100%,rgba(135,188,234,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(208,228,247,1) 0%,rgba(115,177,231,1) 47%,rgba(10,119,213,1) 96%,rgba(135,188,234,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(208,228,247,1) 0%,rgba(115,177,231,1) 47%,rgba(10,119,213,1) 96%,rgba(135,188,234,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(208,228,247,1) 0%,rgba(115,177,231,1) 47%,rgba(10,119,213,1) 96%,rgba(135,188,234,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(208,228,247,1) 0%,rgba(115,177,231,1) 47%,rgba(10,119,213,1) 96%,rgba(135,188,234,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 ); /* IE6-9 */
+}
+

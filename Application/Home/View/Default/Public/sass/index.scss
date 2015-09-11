@@ -1,0 +1,11 @@
+$blue : #1875e7;
+$var	:	2;
+div {
+	color : $blue;
+}
+
+body {
+	margin: (14px/2);
+	top: 50px + 100px;
+	right: $var * 10%;
+}
